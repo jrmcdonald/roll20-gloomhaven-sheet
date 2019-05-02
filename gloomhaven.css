@@ -1,0 +1,155 @@
+label {
+  width: auto;
+  display: inline-block;
+}
+
+.sheet-grid-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  font-family: Palatino;
+  color: #231f20;
+}
+
+.sheet-grid-left {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 10px;
+}
+
+.sheet-grid-right {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+}
+
+.sheet-background {
+  border-image-slice: 8 8 8 8;
+  border-image-width: 8px 8px 8px 8px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  border-image-source: url("https://s3.amazonaws.com/files.d20.io/images/80339647/NySqw9NPH5HFmUSkOyR6dw/original.png?15567395845");
+  padding: 1em 1.5em 1em 1em;
+}
+
+.sheet-class-logo {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.sheet-logo {
+  height: 25px;
+}
+
+.sheet-class {
+  padding-top: 2px;
+}
+
+.sheet-class select {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.sheet-character-class {
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+}
+
+.sheet-name {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.sheet-name-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-gap: 16px;
+}
+
+.sheet-name-grid input {
+  background: #fff;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: black;
+  grid-column: 2 / 3;
+}
+
+.sheet-name-grid label {
+  text-align: right;
+  grid-column: 1 / 2;
+}
+
+.sheet-items {
+  grid-column: 1;
+  grid-row: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-items label {
+  margin-bottom: 0.5em;
+}
+
+.sheet-items textarea {
+  box-sizing: border;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+}
+
+.sheet-perks {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sheet-perks .sheet-perks-list {
+  list-style: none;
+  margin-left: 1em;
+}
+
+.sheet-notes {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-notes>label {
+  margin-bottom: 0.5em;
+}
+
+.sheet-notes-perks-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 0.5em;
+}
+
+.sheet-notes>textarea {
+  box-sizing: border-box;
+  height: 100%;
+  border-style: none;
+  border-color: Transparent;
+  overflow: auto;
+}
+
+.sheet-class-name:not([value='Vermling Mindthief'])~.sheet-mindthief-perks,
+.sheet-class-name:not([value='Cragheart'])~.sheet-cragheart-perks {
+  display: none;
+}
+
+.sheet-class-name:not([value='Vermling Mindthief'])~.sheet-mindthief-logo,
+.sheet-class-name:not([value='Cragheart'])~.sheet-cragheart-logo {
+  display: none;
+}
+

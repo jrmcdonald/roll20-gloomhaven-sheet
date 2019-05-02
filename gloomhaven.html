@@ -1,0 +1,155 @@
+<div class="grid-wrapper">
+  <div class="grid-left">
+    <div class="class-logo background">
+      <div class="logo">
+        <input type="hidden" name="attr_character_class" class="class-name">
+        <div class="mindthief-logo"><img src="https://s3.amazonaws.com/files.d20.io/images/80339624/Ic4drwoRi_tBNKL-rX3VBw/original.png?15567395765" width="25" height="25" /></div>
+      </div>
+      <div class="class">
+        <select name="attr_character_class" class="character-class">
+          <option>-- choose --</option>
+          <option>Vermling Mindthief</option>
+        </select>
+      </div>
+    </div>
+    <div class="name background">
+      <div class="name-grid">
+        <label>Name:</label>
+        <input type="text" name="attr_character_name" disabled />
+
+        <label>Gold:</label>
+        <input type="text" name="attr_character_gold" />
+
+        <label>XP:</label>
+        <input type="number" name="attr_character_xp" />
+
+        <label>Level:</label>
+        <input type="number" name="attr_character_level" />
+      </div>
+    </div>
+    <div class="items background">
+      <label>Items:</label>
+      <textarea name="attr_character_items"></textarea>
+    </div>
+  </div>
+  <div class="grid-right">
+    <div class="perks background">
+      <label>Perks</label>
+      <input type="hidden" name="attr_character_class" class="class-name">
+      <div class="mindthief-perks">
+        <ul class="perks-list">
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk1_check1" />
+            <input type="checkbox" name="attr_mf_perks_perk1_check2" />
+            <span>Remove two -1 cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk2_check1" />
+            <span>Remove four +0 cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk3_check1" />
+            <span>Replace two +1 with two +2 cards cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk4_check1" />
+            <span>Replace one -2 card with one +0 card</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk5_check1" />
+            <input type="checkbox" name="attr_mf_perks_perk5_check2" />
+            <span>Add two +2 frost cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk6_check1" />
+            <input type="checkbox" name="attr_mf_perks_perk6_check2" />
+            <span>Add two reroll +1 cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk7_check1" />
+            <span>Add three reroll pull 1 cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk8_check1" />
+            <span>Add three reroll muddle cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk9_check1" />
+            <span>Add two reroll immobilize cards</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk10_check1" />
+            <span>Add one reroll stun card</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk11_check1" />
+            <input type="checkbox" name="attr_mf_perks_perk11_check2" />
+            <span>Add one reroll disarm card and one reroll muddle card</span>
+          </li>
+          <li>
+            <input type="checkbox" name="attr_mf_perks_perk12_check1" />
+            <span>Ignore negative scenario effects</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="notes background">
+      <label>Notes</label>
+      <div class="notes-perks-wrapper">
+        <div class="box a">
+          <label>&#x2714;:</label>
+          <input type="checkbox" name="attr_notes_perk1_check1" />
+          <input type="checkbox" name="attr_notes_perk1_check2" />
+          <input type="checkbox" name="attr_notes_perk1_check3" />
+        </div>
+        <div class="box b">
+          <label>&#x2714;:</label>
+          <input type="checkbox" name="attr_notes_perk2_check1" />
+          <input type="checkbox" name="attr_notes_perk2_check2" />
+          <input type="checkbox" name="attr_notes_perk2_check3" />
+        </div>
+        <div class="box c">
+          <label>&#x2714;:</label>
+          <input type="checkbox" name="attr_notes_perk3_check1" />
+          <input type="checkbox" name="attr_notes_perk3_check2" />
+          <input type="checkbox" name="attr_notes_perk3_check3" />
+        </div>
+        <div class="box d">
+          <label>&#x2714;:</label>
+          <input type="checkbox" name="attr_notes_perk4_check1" />
+          <input type="checkbox" name="attr_notes_perk4_check2" />
+          <input type="checkbox" name="attr_notes_perk4_check3" />
+        </div>
+        <div class="box e">
+          <label>&#x2714;:</label>
+          <input type="checkbox" name="attr_notes_perk5_check1" />
+          <input type="checkbox" name="attr_notes_perk5_check2" />
+          <input type="checkbox" name="attr_notes_perk5_check3" />
+        </div>
+        <div class="box f">
+          <label>&#x2714;:</label>
+          <input type="checkbox" name="attr_notes_perk6_check1" />
+          <input type="checkbox" name="attr_notes_perk6_check2" />
+          <input type="checkbox" name="attr_notes_perk6_check3" />
+        </div>
+      </div>
+
+      <textarea name="attr_character_notes"></textarea>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/worker">
+
+on("change:character_xp", function() {
+    getAttrs(["character_xp"], function(values) {
+        let level = Math.min(Math.floor((-75 + Math.sqrt(7225 + 40 * values.character_xp)) / 10), 9);
+        setAttrs({
+            character_level: level
+        });
+    });
+});
+
+</script>
+
